@@ -1,13 +1,6 @@
 from selenium.webdriver.common.by import By
 
 
-class Pages:
-    start_page = "https://stellarburgers.nomoreparties.site/"
-    login_page = "https://stellarburgers.nomoreparties.site/login"
-    registration_page = "https://stellarburgers.nomoreparties.site/register"
-    profile_page = "https://stellarburgers.nomoreparties.site/account/profile"
-    recover_password_page = "https://stellarburgers.nomoreparties.site/forgot-password"
-
 class Registration:
     # поле "Имя"
     name_input = (By.XPATH, ".//fieldset[1]//label[text() = 'Имя']")
@@ -31,7 +24,6 @@ class Registration:
 class Login:
     # надпись "Вход" на странице авторизации
     login_label = (By.XPATH, ".//h2[text() = 'Вход']")
-
     # кнопка "Войти в аккаунт" на главной странице
     login_account_button = (By.XPATH, ".//button[text() = 'Войти в аккаунт']")
     # кнопка "Личный Кабинет" на верхней панели
@@ -40,7 +32,6 @@ class Login:
     login_link_button = (By.XPATH, ".//p[text() = 'Уже зарегистрированы?']/a[(@href = '/login') and (text() = 'Войти')]")
     # кнопка-ссылка "Войти" на странице восстановления пароля
     login_link_button_rcv = (By.XPATH, ".//p[text() = 'Вспомнили пароль?']/a[(@href = '/login') and (text() = 'Войти')]")
-
     # поле "Email"
     email_input = (By.XPATH, ".//fieldset[1]//label[text() = 'Email']")
     # поле для ввода логина (Email)
@@ -51,7 +42,6 @@ class Login:
     password_field = (By.XPATH, ".//fieldset[2]//input[@value = '']")
     # кнопка "Войти"
     login_button = (By.XPATH, ".//button[text() = 'Войти']")
-
     # надпись "Профиль" на странице личного кабинета
     account_profile = (By.XPATH, ".//a[(@href = '/account/profile') and (text() = 'Профиль')]")
 
@@ -63,32 +53,30 @@ class Cross:
     # кнопка "Конструктор" на верхней панели
     constructor_button = (By.XPATH, ".//li[1]")
     # логотип-ссылка Stellar Burger
-    logo_link = (By.CLASS_NAME, "AppHeader_header__logo__2D0X2")
+    logo_link = (By.XPATH, ".//div[contains(@class, 'AppHeader_header__logo')]")
     # надпись "Соберите бургер" на странице конструктора
     constructor_page = (By.XPATH, ".//h1[text() = 'Соберите бургер']")
 
 class ConstructorPage:
-    # на панели раздел "Булки" в активном состоянии (выбран)
-    buns_section_click = (By.XPATH, ".//main/section[1]/div[@style = 'display: flex;']/div[1]")
-    # заголовок "Булки" в меню
-    buns_label = (By.XPATH, ".//h2[text() = 'Булки']")
-
-    # на панели раздел "Соусы" в активном состоянии (выбран)
-    sauce_section_click = (By.XPATH, ".//main/section[1]/div[@style = 'display: flex;']/div[2]")
-    # заголовок "Соусы" в меню
-    sauce_label = (By.XPATH, ".//h2[text() = 'Соусы']")
-
-    # на панели раздел "Начинки" в активном состоянии (выбран)
-    topping_section_click = (By.XPATH, ".//main/section[1]/div[@style = 'display: flex;']/div[3]")
-    # заголовок "Начинки" в меню
-    topping_label = (By.XPATH, ".//h2[text() = 'Начинки']")
+    # раздел "Булки"
+    buns_section = (By.XPATH, ".//main/section[1]/div[@style = 'display: flex;']/div[1]")
+    # раздел "Булки" выбран
+    buns_section_click = (By.XPATH, ".//main/section[1]/div[@style = 'display: flex;']/div[1][contains(@class, 'tab_tab_type_current')]")
+    # раздел "Соусы"
+    sauce_section = (By.XPATH, ".//main/section[1]/div[@style = 'display: flex;']/div[2]")
+    # раздел "Соусы" выбран
+    sauce_section_click = (By.XPATH, ".//main/section[1]/div[@style = 'display: flex;']/div[2][contains(@class, 'tab_tab_type_current')]")
+    # раздел "Начинки"
+    topping_section = (By.XPATH, ".//main/section[1]/div[@style = 'display: flex;']/div[3]")
+    # раздел "Начинки" выбран
+    topping_section_click = (By.XPATH, ".//main/section[1]/div[@style = 'display: flex;']/div[3][contains(@class, 'tab_tab_type_current')]")
 
 class Exit:
     # кнопка "Личный Кабинет" на верхней панели
     personal_account_button = (By.XPATH, ".//p[text() = 'Личный Кабинет']")
     # надпись "Профиль" на странице личного кабинета
     account_profile = (By.XPATH, ".//a[(@href = '/account/profile') and (text() = 'Профиль')]")
-    # кнопка "Выход"
+    # кнопка "Выход" в ЛК
     exit_button = (By.XPATH, ".//button[text() = 'Выход']")
     # надпись "Вход" на странице авторизации
     login_label = (By.XPATH, ".//h2[text() = 'Вход']")

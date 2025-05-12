@@ -3,7 +3,6 @@ import string as s
 
 
 class DataGeneration:
-
     # генерируем имя пользователя
     @staticmethod
     def name_generation():
@@ -11,19 +10,16 @@ class DataGeneration:
         name = ''.join(r.choice(s.ascii_letters) for _ in range(name_length))
         return name
 
-
     # генерируем логин (Email)
     @staticmethod
     def login_generation():
         login_length = r.randint(3, 5)
         login = ''.join(r.choice(s.ascii_letters + s.digits) for _ in range(login_length))
-
         domains = ['mail.ru', 'yandex.ru', 'gmail.com']
         domain = r.choice(domains)
-
         return f'{login}@{domain}'
 
-    # генерируем пароль
+    # генерируем пароль (не менее 6 символов)
     @staticmethod
     def password_generation():
         password_length = r.randint(6, 10)
