@@ -58,18 +58,13 @@ class Cross:
     constructor_page = (By.XPATH, ".//h1[text() = 'Соберите бургер']")
 
 class ConstructorPage:
+    active_section = (By.XPATH, ".//main/section[1]//div[contains(@class, 'tab_tab_type_current')]")
     # раздел "Булки"
     buns_section = (By.XPATH, ".//main/section[1]/div[@style = 'display: flex;']/div[1]")
-    # раздел "Булки" выбран
-    buns_section_click = (By.XPATH, ".//main/section[1]/div[@style = 'display: flex;']/div[1][contains(@class, 'tab_tab_type_current')]")
     # раздел "Соусы"
     sauce_section = (By.XPATH, ".//main/section[1]/div[@style = 'display: flex;']/div[2]")
-    # раздел "Соусы" выбран
-    sauce_section_click = (By.XPATH, ".//main/section[1]/div[@style = 'display: flex;']/div[2][contains(@class, 'tab_tab_type_current')]")
     # раздел "Начинки"
     topping_section = (By.XPATH, ".//main/section[1]/div[@style = 'display: flex;']/div[3]")
-    # раздел "Начинки" выбран
-    topping_section_click = (By.XPATH, ".//main/section[1]/div[@style = 'display: flex;']/div[3][contains(@class, 'tab_tab_type_current')]")
 
 class Exit:
     # кнопка "Личный Кабинет" на верхней панели
